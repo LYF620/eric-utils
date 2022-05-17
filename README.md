@@ -10,3 +10,4 @@ eric-utils
 - input
 - output
 - splitChunk
+- dynamic import
