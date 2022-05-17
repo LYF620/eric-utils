@@ -1,36 +1,42 @@
 // 使用defineConfig 提供代码提示
 import { defineConfig } from 'rollup'
+// 允许rollup从json文件导入数据
+import json from '@rollup/plugin-json'
+// 压缩bundle
+import { terser } from 'rollup-plugin-terser'
 
 export default defineConfig([
   {
     input: 'src/index.js',
     output: [
+      // {
+      //   file: 'dist/beforTerseBundle.js',
+      //   format: 'iife',
+      // },
       {
-        file: 'dist/iifeBundle.js',
+        dir: 'dist/iife',
         format: 'iife',
+        plugins: [terser()],
+        inlineDynamicImports: 'dist',
       },
-    ],
-  },
-  {
-    input: 'src/multiple.js',
-    output: [
       {
-        file: 'dist/cmdBundle.js',
+        dir: 'dist/cjs',
         format: 'cjs',
       },
       {
-        file: 'dist/esBundle.js',
+        dir: 'dist/es',
         format: 'es',
       },
       {
-        file: 'dist/amdBundle.js',
+        dir: 'dist/amd',
         format: 'amd',
       },
-      {
-        file: 'dist/umdBundle.js',
-        name: 'myUmd',
-        format: 'umd',
-      },
+      // {
+      //   file: 'dist/umdBundle.js',
+      //   name: 'myUmd',
+      //   format: 'umd',
+      // },
     ],
+    plugins: [json()],
   },
 ])

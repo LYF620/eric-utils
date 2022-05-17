@@ -4,7 +4,7 @@
   "description": "eric-utils",
   "main": "index.js",
   "scripts": {
-    "build:iife": "rollup --config rollup.config.js ",
+    "build": "rollup --config  ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/LYF620/eric-utils#readme",
   "devDependencies": {
-    "rollup": "^2.73.0"
-  }
+    "@rollup/plugin-json": "^4.1.0",
+    "rollup": "^2.73.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {}
 }
