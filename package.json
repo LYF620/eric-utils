@@ -20,6 +20,8 @@
   "homepage": "https://github.com/LYF620/eric-utils#readme",
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@types/react": "^18.0.15",
+    "react": "^17.0.2",
     "rollup": "^2.73.0",
     "rollup-plugin-terser": "^7.0.2"
   },
